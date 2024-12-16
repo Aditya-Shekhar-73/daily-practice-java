@@ -1,4 +1,4 @@
-package practice.steramspractice;
+package practice.streams_practice;
 
 /**
  * Practice steam methods
