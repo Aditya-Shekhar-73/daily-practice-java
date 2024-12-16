@@ -5,9 +5,12 @@ package practice.steramspractice;
  * 1. Filter
  * 2. Map
  * 3. Reduce
+ * 4. Use of Collectors
  */
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 
 public class Practice1 {
@@ -39,5 +42,26 @@ public class Practice1 {
                     .reduce(0, Integer::sum);
         
         System.out.println(sum);
+
+        // Using Collectors
+        List<String> words = Arrays.asList(
+            "Banana", "Apple", "Mango", "Lichi", "Pea"
+        );
+
+        List<String> filteredWords = words.stream()
+            .filter(word -> word.length() > 4)
+            .collect(Collectors.toList());
+
+        System.out.println(filteredWords);
+
+        // Using GroupingBy of Collectors
+        List<String> names = Arrays.asList(
+            "Aditya", "Barbie", "Paimon", "Panda"
+        );
+
+        Map<Character, List<String>> groupedNames = names.stream()
+                                                        .collect(Collectors.groupingBy(name -> name.charAt(0)));
+        
+        System.out.println(groupedNames);
     }
 }
