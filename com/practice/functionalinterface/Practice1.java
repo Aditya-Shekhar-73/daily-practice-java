@@ -14,7 +14,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class FunctionalInterfacePractice1 {
+public class Practice1 {
     public static void main(String[] args) {
         // Predicate
         Predicate<Integer> isEven = number -> number % 2 == 0;
