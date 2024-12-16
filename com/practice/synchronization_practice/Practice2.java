@@ -1,3 +1,5 @@
+package practice.synchronization_practice;
+
 /*
  * Practice Synchronization block
  */
@@ -16,7 +18,7 @@ class Count{
     }
 }
 
-public class SynchronizationPractice2 {
+public class Practice2 {
     public static void main(String[] args) {
         Count count = new Count();
 

@@ -1,3 +1,5 @@
+package practice.synchronization_practice;
+
 class Counter {
     private int count = 0;
 
@@ -10,7 +12,7 @@ class Counter {
     }
 }
 
-public class SynchronizationPractice1 {
+public class Practice1 {
     public static void main(String[] args) {
         Counter count = new Counter();
         Thread thread1 = new Thread(() -> { for(int i = 0; i < 5; i++) count.increement();});
