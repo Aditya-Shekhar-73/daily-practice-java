@@ -1,4 +1,4 @@
-package practice.functionalinterface;
+package practice.functional_interface;
 
 /*
  * Practice Predicate Functional interface
