@@ -15,19 +15,19 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 
-class MyThread extends Thread {
+class MyThread6 extends Thread {
     public void run() {
         System.out.println("Thread1 is started!");
     }
 }
 
-class MyRunnable implements Runnable {
+class MyRunnable6 implements Runnable {
     public void run() {
         System.out.println("Thread2 is started!");
     }
 }
 
-class SharedResource {
+class SharedResource6 {
     public synchronized void produce() throws InterruptedException {
         System.out.println("Producer Thread Started!");
         wait();
@@ -43,12 +43,12 @@ class SharedResource {
 public class Practice6 {
     public static void main(String[] args) {
         // Thread 1
-        MyThread t1 = new MyThread();
+        MyThread6 t1 = new MyThread6();
         t1.start();
 
         // Thread 2
         Thread t2 = new Thread(
-                new MyRunnable());
+                new MyRunnable6());
         t2.start();
 
         // Thread 3
@@ -78,7 +78,7 @@ public class Practice6 {
 
         map.forEach((key, value) -> System.out.println(key + ": " + value));
 
-        SharedResource sharedResource = new SharedResource();
+        SharedResource6 sharedResource = new SharedResource6();
 
         // Inter Thread communication
 

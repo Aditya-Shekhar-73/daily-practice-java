@@ -15,19 +15,19 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ConcurrentHashMap;
 
-class MyThread extends Thread {
+class MyThread5 extends Thread {
     public void run(){
         System.out.println("Thread1 is running!");
     }
 }
 
-class MyRunnable implements Runnable {
+class MyRunnable5 implements Runnable {
     public void run(){
         System.out.println("Thread2 is running!");
     }
 }
 
-class SharedResources {
+class SharedResources5 {
     public synchronized void producer() throws InterruptedException{
         System.out.println("Producer Thread started!");
         System.out.println("Producer Thread has been paused!");
@@ -45,11 +45,11 @@ class SharedResources {
 public class Practice5 {
     public static void main(String[] args) {
         // Method 1
-        MyThread t1 = new MyThread();
+        MyThread5 t1 = new MyThread5();
         t1.start();
 
         // Method 2
-        Thread t2 = new Thread(new MyRunnable());
+        Thread t2 = new Thread(new MyRunnable5());
         t2.start();
 
         // Method 3
@@ -59,7 +59,7 @@ public class Practice5 {
         t3.start();
 
         // Inter Thread communication practice
-        SharedResources resource = new SharedResources();
+        SharedResources5 resource = new SharedResources5();
         
         Thread producer = new Thread(
             () -> {

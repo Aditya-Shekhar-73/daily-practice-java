@@ -5,13 +5,13 @@ package practice.lambdaexpression;
  */
 
 @FunctionalInterface
-interface Greet {
+interface Greet2 {
     void getMessage(String message);
 }
 
 public class Practice2 {
     public static void main(String[] args) {
-        Greet greet = message -> System.out.println(message);
+        Greet2 greet = message -> System.out.println(message);
 
         greet.getMessage("Halloo Alice!");
     }

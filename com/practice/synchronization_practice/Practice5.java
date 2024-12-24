@@ -6,7 +6,7 @@ package practice.synchronization_practice;
  * 2. synchronized blocks
  */
 
-class Count1 {
+class Count5a {
     private int count = 0;
     public synchronized void increement(){
         count++;
@@ -18,7 +18,7 @@ class Count1 {
 }
 
 
-class Count2 {
+class Count5b {
     private int count = 0;
 
     public void increement(){
@@ -34,8 +34,8 @@ class Count2 {
 
 public class Practice5 {
     public static void main(String[] args) {
-        Count1 count1 = new Count1();
-        Count2 count2 = new Count2();
+        Count5a count1 = new Count5a();
+        Count5b count2 = new Count5b();
 
         Thread t1 = new Thread(
             () -> {

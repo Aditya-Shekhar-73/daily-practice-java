@@ -15,21 +15,21 @@ import java.util.concurrent.Executors;
  */
 
 
-class MyThread extends Thread {
+class MyThread9 extends Thread {
     // @Override
     public void run(){
         System.out.println("Thread1 is running!");
     }
 }
 
-class MyRunnable implements Runnable {
+class MyRunnable9 implements Runnable {
     // @Override
     public void run(){
         System.out.println("Thread2 is running!");
     }
 }
 
-class SharedResource1 {
+class SharedResource9a {
     private int count = 0;
 
     public synchronized void increement1(){
@@ -47,7 +47,7 @@ class SharedResource1 {
     }
 }
 
-class SharedResource2 {
+class SharedResource9b {
     public void producer() throws InterruptedException{
         synchronized(this){
             System.out.println("Producer is started!");
@@ -68,11 +68,11 @@ class SharedResource2 {
 public class Practice9 {
     public static void main(String[] args) {
         // 1
-        MyThread t1 = new MyThread();
+        MyThread9 t1 = new MyThread9();
         t1.start();
 
         //2
-        Thread t2 = new Thread(new MyRunnable());
+        Thread t2 = new Thread(new MyRunnable9());
         t2.start();
 
         //3
@@ -82,7 +82,7 @@ public class Practice9 {
         t3.start();
 
         //4
-        SharedResource1 sharedResource1 = new SharedResource1();
+        SharedResource9a sharedResource1 = new SharedResource9a();
 
         Thread t4 = new Thread(
             () -> {
@@ -143,7 +143,7 @@ public class Practice9 {
         map.forEach((key, value) -> System.out.println(key + ": " + value));
 
         // 6
-        SharedResource2 sharedResource2 = new SharedResource2();
+        SharedResource9b sharedResource2 = new SharedResource9b();
 
         Thread t8 = new Thread(
             () -> {

@@ -6,7 +6,7 @@ package practice.synchronization_practice;
  * 2. synchronized methods
  */
 
-class Count {
+class Count4a {
     private int count = 0;
 
     public synchronized void increement(){
@@ -18,7 +18,7 @@ class Count {
     }
 }
 
-class Count2 {
+class Count4b {
     private int count = 0;
 
     public void increement(){
@@ -35,8 +35,8 @@ class Count2 {
 
 public class Practice4 {
     public static void main(String[] args) {
-        Count count1 = new Count();
-        Count2 count2 = new Count2();
+        Count4a count1 = new Count4a();
+        Count4b count2 = new Count4b();
 
         // Synchronized method
         Thread t1 = new Thread(() -> {

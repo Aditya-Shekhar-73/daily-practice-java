@@ -15,20 +15,20 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 
 
-class MyThread extends Thread {
+class MyThread7 extends Thread {
     public void run(){
         System.out.println("Thread A is started!");
         System.out.println(getName());
     }
 }
 
-class MyRunnable implements Runnable {
+class MyRunnable7 implements Runnable {
     public void run(){
         System.out.println("Thread B is started!");
     }
 }
 
-class SharedResource {
+class SharedResource7 {
     private int count1 = 0;
     private int count2 = 0;
 
@@ -51,7 +51,7 @@ class SharedResource {
     }
 }
 
-class SharedResource2 {
+class SharedResource7a {
     public void produce() throws InterruptedException{
         synchronized(this){
             System.out.println("Producer Thread started!");
@@ -71,12 +71,12 @@ class SharedResource2 {
 public class Practice7 {
     public static void main(String[] args) {
         // Using Thread class
-        MyThread t1 = new MyThread();
+        MyThread7 t1 = new MyThread7();
         t1.start();
 
         // Using Runnable interface
         Thread t2 = new Thread(
-            new MyRunnable()
+            new MyRunnable7()
         );
         t2.start();
 
@@ -88,7 +88,7 @@ public class Practice7 {
 
 
         // Synchronization
-        SharedResource sharedResource = new SharedResource();
+        SharedResource7 sharedResource = new SharedResource7();
         Thread t4 = new Thread(
             () -> {
                 for (int i = 0;i < 7;i++) sharedResource.increement1();
@@ -155,7 +155,7 @@ public class Practice7 {
         map.forEach((key, value) -> System.out.println(key + ": " + value));
 
         // Inter Thread communication
-        SharedResource2 sharedResource2 = new SharedResource2();
+        SharedResource7a sharedResource2 = new SharedResource7a();
         Thread t8 = new Thread(
             () -> {
                 try {

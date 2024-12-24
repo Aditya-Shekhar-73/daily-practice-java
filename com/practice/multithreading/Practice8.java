@@ -14,19 +14,19 @@ import java.util.concurrent.Executors;
  * 6. Inter Thread communications
  */
 
-class MyThread extends Thread {
+class MyThread8 extends Thread {
     public void run(){
         System.out.println("Thread1 is started!");
     }
 }
 
-class MyRunnable implements Runnable {
+class MyRunnable8 implements Runnable {
     public void run(){
         System.out.println("Thread2 is started!");
     }
 }
 
-class SharedResource1 {
+class SharedResource8a {
     private int count1 = 0;
     private int count2 = 0;
 
@@ -49,7 +49,7 @@ class SharedResource1 {
     }
 }
 
-class SharedResource2 {
+class SharedResource8b {
     public void producer() throws InterruptedException{
         synchronized(this){
             System.out.println("Producer is started!");
@@ -70,13 +70,13 @@ class SharedResource2 {
 // Main class
 public class Practice8 {
     public static void main(String[] args) {
-        SharedResource1 sharedResource1 = new SharedResource1();
-        SharedResource2 sharedResource2 = new SharedResource2();
+        SharedResource8a sharedResource1 = new SharedResource8a();
+        SharedResource8b sharedResource2 = new SharedResource8b();
 
-        MyThread t1 = new MyThread();
+        MyThread8 t1 = new MyThread8();
         t1.start();
 
-        Thread t2 = new Thread(new MyRunnable());
+        Thread t2 = new Thread(new MyRunnable8());
         t2.start();
 
         Thread t3 = new Thread(
