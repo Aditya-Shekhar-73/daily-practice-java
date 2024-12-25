@@ -7,14 +7,14 @@ package practice.multithreading;
  * 3. Use Lambda expression
  */
 
-class MyThread extends Thread {
+class MyThread3 extends Thread {
     @Override
     public void run(){
         System.out.println("Thread1 is running!");
     }
 }
 
-class MyRunnable implements Runnable {
+class MyRunnable3 implements Runnable {
     @Override
     public void run(){
         System.out.println("Thread2 is running!");
@@ -25,11 +25,11 @@ class MyRunnable implements Runnable {
 public class Practice3 {
     public static void main(String[] args) {
         // Using Thread extends
-        MyThread t1 = new MyThread();
+        MyThread3 t1 = new MyThread3();
         t1.start();
 
         // Using Runnable interface
-        Thread t2 = new Thread(new MyRunnable());
+        Thread t2 = new Thread(new MyRunnable3());
         t2.start();
 
         // Using Lambda expression
