@@ -5,13 +5,13 @@ package practice.lambdaexpression;
  */
 
 @FunctionalInterface
-interface Greet {
+interface Greet11 {
     public void getMessage(String message);
 }
 
 public class Practice11 {
     public static void main(String[] args) {
-        Greet greet = message -> System.out.println(message);
+        Greet11 greet = message -> System.out.println(message);
 
         greet.getMessage("Hallu from custom functional interface!");
     }
